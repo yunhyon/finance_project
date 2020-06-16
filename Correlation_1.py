@@ -56,4 +56,4 @@ E[XY] = 1/N*sum(X_1*Y_1, ..., X_N*Y_N)
 correlation = (E[XY] -E[X]E[Y])/{(E[X^2]-E[X]^2)*(E[Y^2]-E[Y]^2)}^0.5
 '''
 
-
+#I made some changes haha.
