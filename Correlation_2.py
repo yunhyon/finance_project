@@ -41,3 +41,4 @@ correlation = (E[XY] -E[X]E[Y])/{(E[X^2]-E[X]^2)*(E[Y^2]-E[Y]^2)}^0.5
 '''
 
 
+#The lord Yun made a change haha!
