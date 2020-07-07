@@ -1,6 +1,5 @@
 import pandas as pd
 import numpy as np
-import statsmodels.api as sm
 import math
 
 
@@ -38,14 +37,16 @@ def upper_triangular_matrix(size):
     return upper_triangular_matrix
 
 def correlation_matrix(upper_triangular_matrix):
-    for i in range(1,len(upper_triangular_matrix)):
-        for j in range(0,i):
-            [upper_triangular_matrix[j][i-1]]+upper_triangular_matrix[i]
-    return upper_triangular_matrix
+    corr_matrix = []
+    for i in range(len(upper_triangular_matrix)):
+        corr_matrix.append([ upper_triangular_matrix[j][i-j] for j in range(i)] + upper_triangular_matrix[i])
+        print([ upper_triangular_matrix[j][i-j] for j in range(i)] + upper_triangular_matrix[i])
+    return corr_matrix
+
 
 ut_matrix = upper_triangular_matrix(5)
 corr_matrix = correlation_matrix(ut_matrix)
-print(corr_matrix)
+#print(corr_matrix)
 
 
 
