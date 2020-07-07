@@ -29,7 +29,6 @@ print(rho(1,2)) # This number should be -0.8710786026729423
 def upper_triangular_matrix(size):
     upper_triangular_matrix = []
     for i in range(1, size+1):
-        print(i)
         inner_matrix = []
         for j in range(i + 1, size+1):
             inner_matrix.append(rho(i, j))
@@ -40,13 +39,13 @@ def correlation_matrix(upper_triangular_matrix):
     corr_matrix = []
     for i in range(len(upper_triangular_matrix)):
         corr_matrix.append([ upper_triangular_matrix[j][i-j] for j in range(i)] + upper_triangular_matrix[i])
-        print([ upper_triangular_matrix[j][i-j] for j in range(i)] + upper_triangular_matrix[i])
     return corr_matrix
 
 
 ut_matrix = upper_triangular_matrix(5)
 corr_matrix = correlation_matrix(ut_matrix)
-#print(corr_matrix)
+for row in range(len(corr_matrix)):
+    print(corr_matrix[row])
 
 
 
