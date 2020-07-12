@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 import math
-
+import pickle
 
 df_training_data = pd.read_csv('training.csv')
 def rho(i, j):
@@ -31,6 +31,7 @@ def upper_triangular_matrix(size):
     for i in range(1, size+1):
         inner_matrix = []
         for j in range(i + 1, size+1):
+            print(i,j)
             inner_matrix.append(rho(i, j))
         upper_triangular_matrix.append([1.0] + inner_matrix)
     return upper_triangular_matrix
@@ -38,15 +39,13 @@ def upper_triangular_matrix(size):
 def correlation_matrix(upper_triangular_matrix):
     corr_matrix = []
     for i in range(len(upper_triangular_matrix)):
-        corr_matrix.append([ upper_triangular_matrix[j][i-j] for j in range(i)] + upper_triangular_matrix[i])
+        corr_matrix.append([upper_triangular_matrix[j][i-j] for j in range(i)] + upper_triangular_matrix[i])
     return corr_matrix
 
 
-ut_matrix = upper_triangular_matrix(5)
+ut_matrix = upper_triangular_matrix(500)
 corr_matrix = correlation_matrix(ut_matrix)
 for row in range(len(corr_matrix)):
     print(corr_matrix[row])
 
-
-
-
+pickle.dump(corr_matrix, open("Correlation_Matrix.p", "wb"))

@@ -1,0 +1,290 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Formula $a^{T}\left(b-Xa\right)=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+n-dimensional Euclidean Space, 
+\begin_inset Formula $\mathbb{R}^{n}=\left\{ \left(x_{1},x_{2},...,x_{n}\right)|\;x_{i}\in\mathbb{R},i=1,2,...,n\right\} $
+\end_inset
+
+ which is a set(collection) of vectors.
+\end_layout
+
+\begin_layout Standard
+Vector is an element of a space(or subspace).
+ An example of a vector of 
+\begin_inset Formula $\mathbb{R}^{4}$
+\end_inset
+
+ is 
+\begin_inset Formula $(0,0,0,0)$
+\end_inset
+
+ or 
+\begin_inset Formula $($
+\end_inset
+
+3.1 ,2.3 ,-100, 0)
+\end_layout
+
+\begin_layout Standard
+n-dimensional Space 
+\begin_inset Formula $\mathbb{I}^{n}=\left\{ \left(x_{1},x_{2},...,x_{n}\right)|\;x_{i}\in\mathbb{N},i=1,2,...,n\right\} $
+\end_inset
+
+.
+ 
+\begin_inset Formula $(1,1,1)$
+\end_inset
+
+ can be a vector of 
+\begin_inset Formula $\mathbb{I}^{3}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+In the linear algebra, we use the following column notation for a vector
+ of Euclidean space:
+\begin_inset Formula 
+\[
+v=\left[\begin{array}{c}
+x_{1}\\
+x_{2}\\
+\vdots\\
+x_{n}
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+v^{T}=\left[x_{1},x_{2},...,x_{n}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a\cdot\left(b-xa\right)=a^{T}\left(b-xa\right)=\left[a_{1},a_{2},...,a_{n}\right]\left[\begin{array}{c}
+(b_{1}-xa_{1})\\
+(b_{2}-xa_{2})\\
+\vdots\\
+(b_{n}-xa_{n})
+\end{array}\right]=a_{1}(b_{1}-xa_{1})+a_{2}(b_{2}-xa_{2})+...+a_{n}(b_{n}-xa_{n})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+w=\left[\begin{array}{c}
+y_{1}\\
+y_{2}\\
+\vdots\\
+y_{n}
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+v\cdot w=v^{T}w=x_{1}y_{1}+x_{2}y_{2}+...+x_{n}y_{n}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Another way of writing down the dot product of two vectors instead of 
+\begin_inset Formula $v\cdot w$
+\end_inset
+
+ is 
+\begin_inset Formula $v^{T}w$
+\end_inset
+
+.
+ Note that 
+\begin_inset Formula $v^{T}w\neq vw^{T}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+vw^{T}=\left[\begin{array}{c}
+x_{1}\\
+x_{2}\\
+\vdots\\
+x_{n}
+\end{array}\right]\left[y_{1},y_{2},...,y_{n}\right]=\left[\begin{array}{cccc}
+x_{1}y_{1} & x_{1}y_{2} & ... & x_{1}y_{n}\\
+x_{2}y_{1} &  &  & x_{2}y_{n}\\
+ &  &  & ...\\
+ & x_{n}y_{2} & ... & x_{n}y_{n}
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If two vectors are orthogonal, then the dot product is zero.
+\end_layout
+
+\begin_layout Standard
+If two vectors' dot product is zero, then they are orthogonal.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+p=Pb=b_{1}\left[\begin{array}{c}
+P_{11}\\
+P_{21}\\
+...\\
+P_{n1}
+\end{array}\right]+b_{2}\left[\begin{array}{c}
+P_{12}\\
+P_{22}\\
+...\\
+P_{n2}
+\end{array}\right]+...+b_{n}\left[\begin{array}{c}
+P_{1n}\\
+P_{2n}\\
+...\\
+P_{nn}
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+No matter what we choose b, Pb is on the line of a.
+ We also know that Pb for any b is in the C(P).
+\end_layout
+
+\begin_layout Standard
+Column space of A , C(A) is collection of all the vectors of y from the
+ operation of Ax=y where x can be any vectors.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Ax=y$
+\end_inset
+
+ 
+\end_layout
+
+\end_body
+\end_document

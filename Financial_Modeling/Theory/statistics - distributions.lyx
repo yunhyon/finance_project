@@ -1,0 +1,484 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Uniform Distribution and Normal Distribution
+\end_layout
+
+\begin_layout Section
+Probability Density Function(PDF) and Cumulative Density Function(CDF)
+\end_layout
+
+\begin_layout Standard
+Assume a discrete setting in the sample space.
+ 
+\begin_inset Formula $\Omega=\{1,2,3,4,5,6\},\omega\in\Omega$
+\end_inset
+
+.
+ PDF, denoted by 
+\begin_inset Formula $\mathbb{P}\left(\omega\right)$
+\end_inset
+
+ is the the probability of the outcome(an element of 
+\begin_inset Formula $\Omega$
+\end_inset
+
+, 
+\begin_inset Formula $\omega\in\Omega$
+\end_inset
+
+) in the sample space.
+ PDF is a function mapping from the sample space to 
+\begin_inset Formula $[0,1]$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\mathbb{P}:\Omega\rightarrow[0,1]$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+1.
+ From the property of fair dice, we can say that 
+\begin_inset Formula $\mathbb{P}(1)=\mathbb{P}(2)=\mathbb{P}(3)=\mathbb{P}(4)=\mathbb{P}(5)=\mathbb{P}(6)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+2.
+ From the property of the PDF, 
+\begin_inset Formula $\mathbb{P}\left(\omega\right)$
+\end_inset
+
+, 
+\begin_inset Formula $\sum_{i=1}^{6}\mathbb{P}(i)=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now we can conclude that 
+\begin_inset Formula $\mathbb{P}(\omega)=\frac{1}{6}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+The outcome of dice casting is an example of uniformly distributed random
+ variable.
+\end_layout
+
+\begin_layout Standard
+CDF is also a function, 
+\begin_inset Formula $\Phi:\Omega\rightarrow[0,1]$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\Phi(\omega)=\sum_{i=1}^{\omega}\mathbb{P}(i)$
+\end_inset
+
+, 
+\begin_inset Formula $\Phi(1)=\frac{1}{6}$
+\end_inset
+
+, 
+\begin_inset Formula $\Phi(2)=\frac{2}{6}$
+\end_inset
+
+,...
+ Thus, the CDF is the probability of the specific event(a subset of 
+\begin_inset Formula $\Omega$
+\end_inset
+
+, 
+\begin_inset Formula $A\subset\Omega$
+\end_inset
+
+).
+ The number of possible subsets is 6+30+
+\begin_inset Formula $\frac{6\cdot5\cdot4}{3\cdot2}$
+\end_inset
+
++...+1
+\end_layout
+
+\begin_layout Itemize
+PDF, denoted by 
+\begin_inset Formula $\mathbb{P}\left(\omega\right)$
+\end_inset
+
+ is the the probability of the outcome(an element of 
+\begin_inset Formula $\Omega$
+\end_inset
+
+, 
+\begin_inset Formula $\omega\in\Omega$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+CDF is the probability of the event(a subset of 
+\begin_inset Formula $\Omega$
+\end_inset
+
+, 
+\begin_inset Formula $A\subset\Omega$
+\end_inset
+
+).
+ 
+\begin_inset Formula $\Phi(\omega)=\sum_{i=1}^{\omega}\mathbb{P}(i)$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\Phi(4)=\mathbb{P}(\{\omega\in\Omega\;|\;\omega\leq4\})=\frac{4}{6}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The mean and standard deviation(variance) are computed using PDF bt mathematical
+ reasoning.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula $E[X]=\sum_{i=1}^{6}i\cdot\mathbb{P}(i)=1\cdot\frac{1}{6}+2\cdot\frac{1}{6}+...+6\cdot\frac{1}{6}=3.5$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $std[X]=$
+\end_inset
+
+
+\begin_inset Formula $\sqrt{\sum_{i=1}^{6}(i-E[X])^{2}\cdot\mathbb{P}(i)}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Mean estimation by MC Simulation
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula $\bar{X}=\sum_{j=1}^{N}X_{i}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Uniform Distribution in continuous setting(Real numbers)
+\end_layout
+
+\begin_layout Standard
+Let's define the sample space in this setting as follows: 
+\begin_inset Formula $\Omega=[0,1]$
+\end_inset
+
+.
+ The CDF of 
+\begin_inset Formula $\Phi(0.75)=\mathbb{P}(0\leq U\leq0.75)=\int_{0}^{0.75}d\mathbb{P}(\omega)$
+\end_inset
+
+, the probability of sampling a random variable whose value is within in
+ [0,0.75].
+ 
+\begin_inset Formula $\Phi(1)=1$
+\end_inset
+
+, 
+\begin_inset Formula $\Phi(0)=0$
+\end_inset
+
+.
+ From the property of probability, 
+\begin_inset Formula $\int_{0}^{1}d\mathbb{P}(\omega)=\int_{0}^{1}1\cdot d\omega=1$
+\end_inset
+
+ (
+\begin_inset Formula $\sum_{\omega=1}^{6}\mathbb{P}(\omega)=1$
+\end_inset
+
+ in discrete setting) Transition from Lebesgue integral to Riemann integral.
+\end_layout
+
+\begin_layout Itemize
+The mean(or average or expectation) and standard deviation(variance) of
+ unniform distribution are computed using PDF.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula $E[U]=\int_{0}^{1}x\cdot d\mathbb{P}(x)=\int_{0}^{1}x\cdot1\cdot dx=\int_{0}^{1}x\cdot1\cdot dx=\frac{1}{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Var[U]=\int_{0}^{1}$
+\end_inset
+
+
+\begin_inset Formula $\left(x-\frac{1}{2}\right)^{2}\cdot1\cdot dx=\int_{0}^{1}x^{2}-x+\frac{1}{4}dx=\left[\frac{1}{3}x^{3}-\frac{1}{2}x^{2}+\frac{1}{4}x\right]_{0}^{1}=\frac{1}{3}-\frac{1}{2}+\frac{1}{4}=\frac{4-6+3}{12}=\frac{1}{12}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Normal Distribution(Bell curve)
+\end_layout
+
+\begin_layout Standard
+Let's define the sample space in this setting as follows: 
+\begin_inset Formula $\Omega=\mathbb{R}$
+\end_inset
+
+.
+ The PDF of normal distribution is defined as follows:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int_{-\infty}^{\infty}d\mathbb{P}(\omega)=\int_{-\infty}^{\infty}\frac{1}{\sqrt{2\pi\sigma^{2}}}e^{\frac{-(x-\mu)^{2}}{2\sigma^{2}}}dx=\int_{-\infty}^{\infty}\frac{1}{\sqrt{2\pi\sigma^{2}}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^{2}}dx=1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where 
+\begin_inset Formula $\mu$
+\end_inset
+
+ is the mean and 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ is the standard deviation of the normal random variable.
+ 
+\end_layout
+
+\begin_layout Standard
+Standard Normal distribution is where 
+\begin_inset Formula $\mu=0$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Thus, the PDF of 
+\begin_inset Quotes eld
+\end_inset
+
+Standard
+\begin_inset Quotes erd
+\end_inset
+
+ Normal Distribution is 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int_{-\infty}^{\infty}d\mathbb{P}(\omega)=\int_{-\infty}^{\infty}\frac{1}{\sqrt{2\pi}}e^{\frac{-x^{2}}{2}}dx=1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We can prove that 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int_{-\infty}^{\infty}e^{\frac{-x^{2}}{2}}dx=\sqrt{2\pi}
+\]
+
+\end_inset
+
+ by using Gaussian integral.
+\end_layout
+
+\begin_layout Standard
+We have to make a transition from Cartesian coordinate to polar coordinate.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\int_{-\infty}^{\infty}e^{\frac{-x^{2}}{2}}dx\cdot\int_{-\infty}^{\infty}e^{\frac{-y^{2}}{2}}dy & =\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}e^{-\frac{x^{2}+y^{2}}{2}}dxdy=\int_{0}^{2\pi}\int_{0}^{\infty}e^{-\frac{r^{2}}{2}}rdrd\theta=\int_{0}^{2\pi}\left(\int_{0}^{\infty}-e^{-x}dx\right)d\theta=\int_{0}^{2\pi}\left(-e^{-\infty}+1\right)d\theta=2\pi
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $x=rcos\theta$
+\end_inset
+
+, 
+\begin_inset Formula $y=rsin\theta$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int_{-\infty}^{\infty}e^{\frac{-x^{2}}{2}}dx\cdot\int_{-\infty}^{\infty}e^{\frac{-y^{2}}{2}}dy=\left(\int_{-\infty}^{\infty}e^{\frac{-x^{2}}{2}}dx\right)^{2}=2\pi
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int_{-\infty}^{\infty}e^{-ax^{2}+bx}dx=\sqrt{\frac{\pi}{a}}e^{-\frac{b}{4a}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Why is normal distribution so important?? Because of central limit theorem.
+\end_layout
+
+\begin_layout Standard
+There is a random variable following a distribution, the sum of the random
+ variables follows normal distribution if the number of summation goes to
+ a high number(e.g.
+ greater than 20)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Y=\Sigma_{i=1}^{20}X_{i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

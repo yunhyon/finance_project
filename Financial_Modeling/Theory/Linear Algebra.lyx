@@ -1,0 +1,484 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Basics of Linear Algebra
+\end_layout
+
+\begin_layout Standard
+What we need to know for the project:
+\end_layout
+
+\begin_layout Itemize
+Least Squared Method(Linear Regression) 3 lectures
+\end_layout
+
+\begin_layout Itemize
+Principal Component Analysis(PCA) 3 lectures
+\end_layout
+
+\begin_layout Itemize
+Eigen Values and Eigen Vectors(Eigen Value Decomposition) TBD
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\sqrt{(Y_{true}-Y_{line})^{2}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\left|X_{1}-X_{2}\right|+\left|Y_{1}-Y_{2}\right|$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\left(Y_{true}-Y_{line}\right)^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+min\left(\sum_{i=1}^{N}\left(Y_{true}^{i}-Y_{line}^{i}\right)^{2}\right)=\min_{(a,b)\in\mathbb{R}}\left(\sum_{i=1}^{N}\left(Y_{true}^{i}-\left(a\cdot X_{true}^{i}+b\right)\right)^{2}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Linea regression problem can be solved by finding the orthogonal projection
+ into the column space, which is the linear combination of columns.
+\end_layout
+
+\begin_layout Standard
+4 subspaces, A
+\end_layout
+
+\begin_layout Standard
+Row space, 
+\begin_inset Formula $C(A^{T})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Null Space, 
+\begin_inset Formula $N(A)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Column Space, 
+\begin_inset Formula $C(A)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Left Null Space, 
+\begin_inset Formula $N(A^{T})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+What is space? Space is a set with some structures(operations).
+ But herein we can restrict the space to n-dimensional Euclidean space.
+ 
+\begin_inset Formula $\mathbb{R}^{n}=\left\{ \left(x_{1},x_{2},...,x_{n}\right)|x_{i}\in\mathbb{R},i=1,2..,n\right\} $
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+What is subspace? A space which is a subset of the n-dimensional Euclidean
+ space.
+ Here are examples of subspaces:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\mathbb{A=}\left\{ \left(x_{1},x_{2},...,x_{n}\right)|x_{i}\leq0,i=1,2..,n\right\} $
+\end_inset
+
+is a subspace of 
+\begin_inset Formula $\mathbb{R}^{n}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\mathbb{B=}\left\{ a\cdot W_{1}+b|\cdot W_{2},W_{1}=(1,1,...,1)\in\mathbb{R}^{n},W_{2}=(-1,-1,...,-1)\in\mathbb{R}^{n},a,b\in\mathbb{R}\right\} $
+\end_inset
+
+is a subspace of 
+\begin_inset Formula $\mathbb{R}^{n}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\mathbb{R}^{2}=\left\{ \left(x_{1},x_{2}\right)|x_{i}\in\mathbb{R},i=1,2..,n\right\} $
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\mathbb{C}(A)=\left\{ x\cdot\left[\begin{array}{c}
+2\\
+-1
+\end{array}\right]+y\cdot\left[\begin{array}{c}
+0\\
+2
+\end{array}\right]|x,y\in\mathbb{R}\right\} $
+\end_inset
+
+ is a subspace of 2-dimensional Euclidean space.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\mathbb{C}(A^{T})=\left\{ x\cdot\left[\begin{array}{c}
+2\\
+0
+\end{array}\right]+y\cdot\left[\begin{array}{c}
+-1\\
+2
+\end{array}\right]|x,y\in\mathbb{R}\right\} $
+\end_inset
+
+is another subspace of 2-dimensional Euclidean space.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A=\left[\begin{array}{ccc}
+1 & 2 & 3\\
+4 & 5 & 6
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\mathbb{C}(A)=\left\{ x\cdot\left[\begin{array}{c}
+1\\
+4
+\end{array}\right]+y\cdot\left[\begin{array}{c}
+2\\
+5
+\end{array}\right]+z\cdot\left[\begin{array}{c}
+3\\
+6
+\end{array}\right]|x,y,z\in\mathbb{R}\right\} $
+\end_inset
+
+ is a subspace of 2-dimensional Euclidean space.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\mathbb{C}(A^{T})=\left\{ x\cdot\left[\begin{array}{c}
+1\\
+2\\
+3
+\end{array}\right]+y\cdot\left[\begin{array}{c}
+4\\
+5\\
+6
+\end{array}\right]|x,y\in\mathbb{R}\right\} $
+\end_inset
+
+is another subspace of 3-dimensional Euclidean space.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Ax=b
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The column picture of the matrix operation, 
+\begin_inset Formula $Ax=b$
+\end_inset
+
+ for A is m by n matrix(m rows and n columns)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x_{1}\cdot C_{1}+x_{2}\cdot C_{2}+...+x_{m}\cdot C_{m}=b
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The equation 
+\begin_inset Formula $Ax=b$
+\end_inset
+
+ is solvable when b is in the 
+\begin_inset Formula $C(A)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $C(A)=\{a_{1}\cdot C_{1}+a_{2}\cdot C_{2}+...+a_{m}\cdot C_{m}|a_{i}\in\mathbb{R}\}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A=\left[\begin{array}{ccc}
+1 & 2 & 3\\
+4 & 5 & 6
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+b=\left[\begin{array}{c}
+3\\
+9
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Is 
+\begin_inset Formula $Ax=b$
+\end_inset
+
+ solvable? The equation 
+\begin_inset Formula $Ax=b$
+\end_inset
+
+ is solvable if and only if b is in the 
+\begin_inset Formula $C(A)$
+\end_inset
+
+.
+ The meaning of b is in the 
+\begin_inset Formula $C(A)$
+\end_inset
+
+ is that we can find 
+\begin_inset Formula $x_{1},x_{2},x_{3}$
+\end_inset
+
+so that the following equation holds:
+\begin_inset Formula 
+\[
+Ax=x_{1}\cdot\left[\begin{array}{c}
+1\\
+4
+\end{array}\right]+x_{2}\cdot\left[\begin{array}{c}
+2\\
+5
+\end{array}\right]+x_{3}\cdot\left[\begin{array}{c}
+3\\
+6
+\end{array}\right]=\left[\begin{array}{c}
+3\\
+9
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+B=\left[\begin{array}{cc}
+1 & 4\\
+2 & 5\\
+3 & 6
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+b=\left[\begin{array}{c}
+5\\
+7\\
+9
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Is 
+\begin_inset Formula $Bx=b$
+\end_inset
+
+ solvable? Yes!
+\end_layout
+
+\begin_layout Standard
+How about 
+\begin_inset Formula $Bx=d$
+\end_inset
+
+? Nope! Because d is not in the 
+\begin_inset Formula $C(B)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+d=\left[\begin{array}{c}
+5\\
+7\\
+11
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+But still we can find the best approximation of x satisfying 
+\begin_inset Formula $B\hat{x}=d$
+\end_inset
+
+.
+ This approximation is linear regression.
+\end_layout
+
+\end_body
+\end_document

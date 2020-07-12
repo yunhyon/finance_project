@@ -1,0 +1,213 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{indentfirst}
+\setlength{\parindent}{0pt}
+\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize letterpaper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Monte Carlo Simulation
+\end_layout
+
+\begin_layout Author
+Kisun Yoon
+\end_layout
+
+\begin_layout Date
+01/19/2019
+\end_layout
+
+\begin_layout Standard
+MC Simulation is for conducting random sampling of a given probability distribut
+ion to solve the problem.
+ MC simulation doesn't give analytical(or exact) solution of problems such
+ as 1.
+ numerical integration(computing integration without using the knowledge
+ of calculus) and 2.
+ computing expectations(mean).
+\begin_inset Formula 
+\[
+\frac{\pi}{4}\thickapprox\frac{n}{N}\;
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\int_{0}^{1}\sqrt{1-x^{2}}dx=\frac{\pi}{4}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+1.
+ You will use a for loop and you will give the total number of samples in
+ the first place.
+\end_layout
+
+\begin_layout Standard
+2.
+ Inside the for loop, you first generate a random dot(how?) and then you
+ examine(how) the random dot you just created.
+ 
+\end_layout
+
+\begin_layout Standard
+3.
+ If included, then count, else no count
+\end_layout
+
+\begin_layout Standard
+4.
+ move on the the next sample
+\end_layout
+
+\begin_layout Standard
+5.
+ After finishing for loop, print(n/N)
+\end_layout
+
+\begin_layout Standard
+Let's think about the error of the estimation(numerical integration).
+ 
+\begin_inset Formula $Z$
+\end_inset
+
+ is the estimation of the integration by MC simulation, 
+\begin_inset Formula $\int_{0}^{1}\sqrt{1-x^{2}}dx$
+\end_inset
+
+.
+ It is very important that 
+\begin_inset Formula $Z$
+\end_inset
+
+ is a random variable.
+ For a random variable, we usually compute 
+\begin_inset Formula $E[Z],$
+\end_inset
+
+and/or 
+\begin_inset Formula $std(Z)$
+\end_inset
+
+ .
+ 
+\begin_inset Formula $std(Z)$
+\end_inset
+
+ is used for the indication of the error of the estimate of the integral.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+std(Z):=\sqrt{\frac{\sum_{i=1}^{m}(Z_{i}-\frac{1}{m}\sum_{i=1}^{m}Z_{i})^{2}}{m-1}}\sim\frac{1}{\sqrt{N}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If we sample random dots 1000 times(N=1000) and we sample random dots 100,000
+ times(N=100,000), the standard deviation of 100,000 MC simulation is 10
+ times smaller than 1,000 MC simulation.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $std(Z_{1,000})\sim\frac{1}{\sqrt{1,000}}$
+\end_inset
+
+ and 
+\begin_inset Formula $std(Z_{100,000})\sim\frac{1}{\sqrt{100,0000}}=\frac{1}{10\sqrt{1,000}}$
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
