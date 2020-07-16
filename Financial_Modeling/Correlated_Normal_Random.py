@@ -51,6 +51,14 @@ for y in range(len(C)):
         w_evolution.append(W_values[x][y])
     W_values_transposed.append(w_evolution)
 
-plt.plot(T_values, W_values_transposed[2])
-plt.plot(T_values, W_values_transposed[5])
+
+plt.figure()
+plt.subplot(211)
+plt.plot(T_values, W_values_transposed[0]) # Brownian motion for stock 0
+plt.plot(T_values, W_values_transposed[1]) # Brownian motion for stock 1
+
+plt.subplot(212)
+plt.plot(T_values, W_values_transposed[1]) # Brownian motion for stock 1
+plt.plot(T_values, W_values_transposed[3]) # Brownian motion for stock 3
+
 plt.show()

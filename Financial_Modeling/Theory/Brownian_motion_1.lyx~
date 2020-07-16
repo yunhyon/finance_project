@@ -88,6 +88,14 @@ Normal Distribution
 \end_layout
 
 \begin_layout Standard
+If we don't know the value of X, we say the variable is a random variable.
+ We can sample variates for the random variable.
+ Every sample has different value(outcomes).
+ But we do have some knowledge about the random variable.
+ Mean, variance, skewness, kurtosis, and etc.
+\end_layout
+
+\begin_layout Standard
 Let X be a random variable following Uniform distribution.
  
 \begin_inset Formula $X\sim U$
@@ -175,14 +183,15 @@ Brownian motion is a stochastic process denoted by
 \begin_inset Formula $W(0)=0$
 \end_inset
 
-.
+ by definition.
+ W(0) is not a random variable.
 \end_layout
 
 \begin_layout Enumerate
 \begin_inset Formula $W(t)$
 \end_inset
 
- is almost surely continuous.
+ is (almost surely) continuous.
 \end_layout
 
 \begin_layout Enumerate
@@ -190,9 +199,21 @@ Brownian motion is a stochastic process denoted by
 \end_inset
 
  has independent increments.
+ 
+\begin_inset Formula $W(t)$
+\end_inset
+
+ and 
+\begin_inset Formula $W(t+\Delta t)-W(t)$
+\end_inset
+
+ are independent.
 \end_layout
 
 \begin_layout Enumerate
+When we stand at time t<T, the increment follows a Normal distribution whose
+ mean is zero and whose variance is the time difference.
+ Using mathematical notation, we can writhe the claim as follows: 
 \begin_inset Formula $W(T)-W(0)\sim N(0,T)$
 \end_inset
 
@@ -210,16 +231,85 @@ Brownian motion is a stochastic process denoted by
 \end_inset
 
 .
- 
+ The time difference, 
+\begin_inset Formula $T-s$
+\end_inset
+
+ in the increment determines the variance of the Normal Random Variable
+ which is 
+\begin_inset Formula $Z=W(T)-W(s)$
+\end_inset
+
+.
+ The variance of the increment(which is Normal random variable) is T-s.
 \end_layout
 
+\begin_deeper
+\begin_layout Enumerate
+What is the variance of the increment, where the increment is denoted by
+ W(5)-W(2)? 3
+\end_layout
+
+\begin_layout Enumerate
+Increment is denoted by W(3)-W(1).
+ The variance of increment is denoted by 
+\begin_inset Formula $\sigma(W(3)-W(1))=2$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+What probability distribution does the increment, W(4)-W(0) have? Normal
+ distribution
+\end_layout
+
+\begin_layout Enumerate
+Is W(4)-W(0) a random variable? Yes.It means at time 
+\begin_inset Formula $t<4,$
+\end_inset
+
+you don't know what the value for W(4)-W(0) is.
+\end_layout
+
+\begin_layout Enumerate
+Is W(4) a random variable? Yes.
+ It means at time 
+\begin_inset Formula $t<4,$
+\end_inset
+
+you don't know what the value for W(4) is.
+\end_layout
+
+\begin_layout Enumerate
+Now we know W(4)-W(2) follows the normal distribution with mean of zero
+ and variance of 2.
+ Does W(4) follows the Normal distribution too? Yes.
+ W(4) = W(4)-W(0) and we know W(4)-W(0) ~ N(0,4)
+\end_layout
+
+\begin_layout Enumerate
+W(5) is a random variable if we stand at time t<5.
+ If we stand at time t=5, W(5) is not a random variable meaning that we
+ know what the value for W(5) is.
+\end_layout
+
+\begin_layout Enumerate
+W(5)-W(3) is a random variable if we stand at time t<5.
+ If we stand at time t=5, W(5)-W(3) is not a random variable meaning that
+ we know what the value for W(5)-W(3) is.
+ We know the value of W(3) if we stand at t=4, but we still don't know what
+ the value of W(5) is.
+\end_layout
+
+\end_deeper
 \begin_layout Enumerate
 In other words, 
 \begin_inset Formula $W(T_{i})=W(T_{i-1})+Z$
 \end_inset
 
  where 
-\begin_inset Formula $Z\sim N(0,T)$
+\begin_inset Formula $Z\sim N(0,T_{i}-T_{i-1})$
 \end_inset
 
 , 
@@ -237,6 +327,11 @@ In other words,
 .
  
 \begin_inset Formula $\{T_{0},T_{1},T_{2},...,T_{N}\}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $Z=W(T_{i})-W(T_{i-1})\sim N(0,T_{i}-T_{i-1})$
 \end_inset
 
 

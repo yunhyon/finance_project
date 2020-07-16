@@ -213,7 +213,7 @@ Brownian motion is a stochastic process denoted by
 \begin_layout Enumerate
 When we stand at time t<T, the increment follows a Normal distribution whose
  mean is zero and whose variance is the time difference.
- Using mathematical notation, we can writhe the claim as follows: 
+ Using mathematical notation, we can write the claim as follows: 
 \begin_inset Formula $W(T)-W(0)\sim N(0,T)$
 \end_inset
 
@@ -265,7 +265,8 @@ What probability distribution does the increment, W(4)-W(0) have? Normal
 \end_layout
 
 \begin_layout Enumerate
-Is W(4)-W(0) a random variable? Yes.It means at time 
+Is W(4)-W(0) a random variable? Yes.
+ It means at time 
 \begin_inset Formula $t<4,$
 \end_inset
 
@@ -284,7 +285,7 @@ you don't know what the value for W(4) is.
 \begin_layout Enumerate
 Now we know W(4)-W(2) follows the normal distribution with mean of zero
  and variance of 2.
- Does W(4) follows the Normal distribution too? Yes.
+ Does W(4) follow the Normal distribution too? Yes.
  W(4) = W(4)-W(0) and we know W(4)-W(0) ~ N(0,4)
 \end_layout
 
