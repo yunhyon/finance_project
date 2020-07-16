@@ -14,6 +14,7 @@ corr_mat = pickle.load(open("Correlation_Matrix.p","rb"))
 df_corr_mat = pd.DataFrame(corr_mat)
 df_corr_mat.to_csv('Original_Correlation_Matrix.csv', index=False)
 
+#Checking if A = C*C^T = P
 A = np.array(corr_mat)
 C = np.linalg.cholesky(A)
 make_csv(C, 'Cholesky')
@@ -23,22 +24,33 @@ P = np.matmul(C, CT)
 make_csv(P, 'Correlation_Matrix')
 
 
+current_T = 0.0
+delta = 1.0
+start = 0.0
+delta = 0.01
+end = 9.99
 
-delta_t = 0.01
-start = 0
-end = 10.0
+current_W = [0.0]*len(C)
+current_T = 0.0
+T_values = [delta*float(i) for i in range(1000)]  #
+W_values = [current_W]  #[ [500 elements], [500 elements],...,[500 elements]]
 
-for j in range(30):
-    t_value = [0.0]
-    W_value = [0.0]  # by definition of Brownian motion, W(0) = 0
-    W_current = 0.0  # W(0)
-    for i in range(1,1001): #the simulation starts from W(0.01)
-        t = start + i*delta_t
-        t_value.append(t)
-        X = random.normalvariate(0.0, math.sqrt(delta_t)) # Generating independent Normal random variable, N(0, 0.01)
-        #print(t, W_current, Z)
-        W_current = W_current + Z # By definition of BM, W(0.01) = W(0) + Z1(0,0.01), W(0.02) = W(0.01) + Z2(0,0.01),..., W(10) = W(9.99)+ Z1000(0,0.01)
-        W_value.append(W_current) # W(t+delta_t) = W(t) + Z(0,0.1)
+for i in range(999):
+    Z_list = []
+    for j in range(len(C)):
+        Z_list.append(random.normalvariate(0, (T_values[i+1] - T_values[i])**0.5))
+    X_list = np.matmul(C,Z_list)
+    current_W = [ W+X for W,X in zip(current_W, X_list) ]
+    W_values.append(current_W)
 
-    plt.plot(t_value,W_value)
+W_values_transposed = [] # [ [1000 elements], [1000 elements] ,... ,[]  ]
+
+for y in range(len(C)):
+    w_evolution = []
+    for x in range(1000):
+        w_evolution.append(W_values[x][y])
+    W_values_transposed.append(w_evolution)
+
+plt.plot(T_values, W_values_transposed[2])
+plt.plot(T_values, W_values_transposed[5])
 plt.show()
