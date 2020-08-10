@@ -1,0 +1,824 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+%no date
+\date{}
+
+%No Indent
+\usepackage{indentfirst}
+\setlength{\parindent}{0pt}
+
+%Math packages
+\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+
+%Theorem/Definition/Lemma/Corrolary and etc
+\newtheorem{Definition}{Definition}
+\newtheorem{Lemma}{Lemma}
+\newtheorem{Proof}{Proof}
+\newtheorem{Corollary}{Corollary}
+\newtheorem{Theorem}{Theorem}
+\newtheorem{Remark}{Remark}
+\newtheorem{Proposition}{Proposition}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize letterpaper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Brownian Motion
+\end_layout
+
+\begin_layout Standard
+Brownian motion is a mathematical definition based on probability theory.
+ Here is the mathematical definition of Brownian motion.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{Definition}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "Definition of Brownian Motion"
+
+\end_inset
+
+ Suppose there is a stochastic process 
+\begin_inset Formula $W(t,\omega)$
+\end_inset
+
+ defined on a probability space, 
+\begin_inset Formula $\left(\Omega_{1}^{R},\mathcal{F},\mathbb{P}\right)$
+\end_inset
+
+ .
+ We say 
+\begin_inset Formula $W(t,\omega)$
+\end_inset
+
+ is a Brownian motion if
+\end_layout
+
+\begin_layout Standard
+(i) 
+\begin_inset Formula $W_{0}(\omega)=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(ii) For all 
+\begin_inset Formula $0=t_{0}<t_{1}<...<t_{m}=T$
+\end_inset
+
+ , the increments 
+\begin_inset Formula $W_{t_{1}}(\omega)-W_{t_{0}}(\omega)$
+\end_inset
+
+, 
+\begin_inset Formula $W_{t_{2}}(\omega)-W_{t_{1}}(\omega),...,W_{t_{m}}(\omega)-W_{t_{m-1}}(\omega)$
+\end_inset
+
+ are independent and each of these increments is normally distributed with
+ 
+\begin_inset Formula $\mathbb{E}[$
+\end_inset
+
+
+\begin_inset Formula $W_{t_{i+1}}(\omega)-W_{t_{i-1}}(\omega)]=0$
+\end_inset
+
+ and 
+\begin_inset Formula $Var[$
+\end_inset
+
+
+\begin_inset Formula $W_{t_{i+1}}(\omega)-W_{t_{i-1}}(\omega)]=t_{i+1}-t_{i}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{Definition}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{Definition}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "Definition of Sample Space"
+
+\end_inset
+
+ Let 
+\begin_inset Formula $\mathcal{A}$
+\end_inset
+
+ be the set of all continuous functions 
+\begin_inset Formula $f:[0,\infty)\rightarrow\mathbb{R}$
+\end_inset
+
+.
+ The n-random-path-sample space, denoted by 
+\begin_inset Formula $\Omega_{n}^{R}$
+\end_inset
+
+ is defined as 
+\begin_inset Formula $\Omega_{n}^{R}=\left\{ \left(f_{1},f_{2},...,f_{n}\right)\;|\;f_{i}\in\mathcal{A}\textrm{ for }i=1,2,...,n\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{Definition}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{Definition}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "Definition of Sigma Algebra"
+
+\end_inset
+
+ Let 
+\begin_inset Formula $\mathcal{F}$
+\end_inset
+
+ be a non-empty collection of subsets of 
+\begin_inset Formula $\Omega_{n}^{R}$
+\end_inset
+
+.
+ We say that 
+\begin_inset Formula $\mathcal{F}$
+\end_inset
+
+ is a 
+\begin_inset Formula $\sigma$
+\end_inset
+
+-algebra if 
+\end_layout
+
+\begin_layout Standard
+(i) It is closed under complementation.
+ That is, if a set 
+\begin_inset Formula $\mathcal{S}\in\mathcal{F}$
+\end_inset
+
+, then its complement 
+\begin_inset Formula $\mathcal{S}^{c}\in\mathcal{F}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(ii) It is closed under countable unions.
+ That is, if there is a sequence of sets in 
+\begin_inset Formula $\mathcal{F}$
+\end_inset
+
+ , 
+\begin_inset Formula $\mathcal{S}_{1},\mathcal{S}_{2},...\in\mathcal{F}$
+\end_inset
+
+, then their countable unions 
+\begin_inset Formula $\cup_{n=1}^{\infty}\mathcal{A}_{n}\in\mathcal{F}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{Definition}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{Definition}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "Definition of Measurable Space and Probability Space"
+
+\end_inset
+
+ If a function 
+\begin_inset Formula $\mathbb{P}:\mathcal{F}\rightarrow[0,1]$
+\end_inset
+
+ satisfies 
+\end_layout
+
+\begin_layout Standard
+(i) 
+\begin_inset Formula $\mathbb{P}\left(\Omega\right)=1$
+\end_inset
+
+ and
+\end_layout
+
+\begin_layout Standard
+(ii) If there is a sequence of disjoint sets in 
+\begin_inset Formula $\mathcal{F}$
+\end_inset
+
+, 
+\begin_inset Formula $\mathcal{S}_{1},\mathcal{S}_{2},...\in\mathcal{F}$
+\end_inset
+
+, then 
+\begin_inset Formula $\mathbb{P}\left(\cup_{n=1}^{\infty}\mathcal{S}_{n}\right)=\sum_{n=1}^{\infty}\mathbb{P}\left(\mathcal{S}_{n}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+then we say 
+\begin_inset Formula $\mathbb{P}$
+\end_inset
+
+ is a probability measure.
+ We say 
+\begin_inset Formula $\left(\Omega_{n}^{R},\mathcal{F}\right)$
+\end_inset
+
+ is a measurable space and 
+\begin_inset Formula $\left(\Omega_{n}^{R},\mathcal{F},\mathbb{P}\right)$
+\end_inset
+
+ is a probability space.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{Definition}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{Definition}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "Definition of Random Variable on Sample Space"
+
+\end_inset
+
+ A random variable 
+\begin_inset Formula $X\left(\omega\right)$
+\end_inset
+
+ defined on 
+\begin_inset Formula $\Omega_{n}^{R}$
+\end_inset
+
+ is a function 
+\begin_inset Formula $X:\Omega_{n}^{R}\rightarrow\mathbb{R}^{d}$
+\end_inset
+
+ where 
+\begin_inset Formula $\mathbb{R}^{d}$
+\end_inset
+
+ denotes a d-dimensional Euclidean space.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{Definition}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{Definition}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "Definition of measurable Random Variable "
+
+\end_inset
+
+ If a 
+\begin_inset Formula $\sigma$
+\end_inset
+
+-algebra is the smallest 
+\begin_inset Formula $\sigma$
+\end_inset
+
+-algebra containing all the subsets of defined as 
+\begin_inset Formula $\{X\in B\}:=\{\omega\in\Omega\;|\;X\left(\omega\right)\in B\textrm{\textrm{ for }every }B\in\mathcal{B}(\mathbb{R}^{d})\}$
+\end_inset
+
+, we say the 
+\begin_inset Formula $\sigma$
+\end_inset
+
+- algebra is generated by 
+\begin_inset Formula $\sigma\left(X(\omega)\right)$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\mathcal{B}(\mathbb{R}^{d})$
+\end_inset
+
+ denotes the smallest 
+\begin_inset Formula $\sigma$
+\end_inset
+
+-algebra containing all open sets of 
+\begin_inset Formula $\mathbb{R}^{d}$
+\end_inset
+
+.
+ If every set in 
+\begin_inset Formula $\sigma\left(X(\omega)\right)$
+\end_inset
+
+ is in a 
+\begin_inset Formula $\sigma$
+\end_inset
+
+-algebra 
+\begin_inset Formula $\mathcal{G}$
+\end_inset
+
+, we say 
+\begin_inset Formula $X(\omega)$
+\end_inset
+
+ is a 
+\begin_inset Formula $\mathcal{G}$
+\end_inset
+
+-measurable random variable.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{Definition}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{Definition}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "Definition of Random Variable on Measurable Space"
+
+\end_inset
+
+ A random variable 
+\begin_inset Formula $X(\omega)$
+\end_inset
+
+ defined on 
+\begin_inset Formula $(\Omega_{n}^{R},\mathcal{F},\mathbb{P})$
+\end_inset
+
+ is a real-valued function 
+\begin_inset Formula $X:\Omega_{n}^{R}\rightarrow\mathbb{R}^{d}$
+\end_inset
+
+ with the property that every subset of 
+\begin_inset Formula $\Omega_{n}^{R}$
+\end_inset
+
+ defined as 
+\begin_inset Formula $\{X\in B\}$
+\end_inset
+
+ is in the 
+\begin_inset Formula $\sigma$
+\end_inset
+
+-algebra 
+\begin_inset Formula $\mathcal{F}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{Definition}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{Definition}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "Definition of Stochastic Process"
+
+\end_inset
+
+ A stochastic process 
+\begin_inset Formula $X(t,\omega):=\{X_{t}(\omega)\;|\;0\leq t\leq T\}$
+\end_inset
+
+ defined on 
+\begin_inset Formula $(\Omega_{n}^{R},\mathcal{F},\mathbb{P})$
+\end_inset
+
+ is a collection of the random variables 
+\begin_inset Formula $X_{t}(\omega)$
+\end_inset
+
+ defined on 
+\begin_inset Formula $(\Omega_{n}^{R},\mathcal{F},\mathbb{P})$
+\end_inset
+
+ indexed by time 
+\begin_inset Formula $t\in[0,T].$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{Definition}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
